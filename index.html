@@ -1,76 +1,54 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="icon" type="image/png" href="ldn.png">
-<link rel="stylesheet" type="text/css" href="dblheart.css" />
-<title>Leah Morabito</title>
-</head>
-
-<body>
-    <div id="page">
-        <div class="topNaviagationLink"><a href="index.html">Home</a></div>
-	<div class="topNaviagationLink"><a href="research.html">Research</a></div>
-        <div class="topNaviagationLink"><a href="thesis.html">Thesis</a></div>
-        <div class="topNaviagationLink"><a href="Morabito_CV.pdf" onclick="return ! window.open(this.href);">Full CV</a></div>
-	<div class="topNaviagationLink"><a href="http://adsabs.harvard.edu/cgi-bin/abs_connect?author=morabito,+l.k.;morabito,+leah+k.;morabito,+leah;morabito,+l.&aut_xct=YES&return_req=no_params" onclick="return ! window.open(this.href);">ADS Search</a></div>
-        <div class="topNaviagationLink"><a href="mailto:leah.morabito@physics.ox.ac.uk">Contact</a></div>
-
-<div class="topNavigationLink" itemscope itemtype="https://schema.org/Person"><a itemprop="sameAs" content="https://orcid.org/0000-0003-0487-6651" href="https://orcid.org/0000-0003-0487-6651" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">orcid.org/0000-0003-0487-6651</a></div>
-	</div>
-    <div id="mainPicture">
-    	<div class="picture">
-        	<div id="headerTitle">Leah Morabito</div>
-            <div id="headerSubtext"><a href="http://www2.physics.ox.ac.uk/research/astrophysics" onclick="return ! window.open(this.href);">Oxford Astrophysics</a></div>
+---
+layout: base
+---
+<div class="blog-cover" style="background-image:url(/images/{{ site.inc.cover_image }});">
+    
+    <section>
+        <div class="container">
+            <h1>{{ site.inc.title }}</h1>
+            {% if site.inc.subtitle %}<h3>{{ site.inc.subtitle }}</h3>{% endif %}
+        
+            {% if site.inc.twitter %}
+            <a href="https://twitter.com/{{ site.inc.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter"></i></a>
+            {% endif %}
+            {% if site.inc.facebook %}
+            <a href="http://facebook.com/{{ site.inc.facebook }}" title="Like on Facebook" target="_blank"><i class="icon icon-facebook"></i></a>
+            {% endif %}
+            <a href="/feed.xml" title="RSS Feed">
+                <i class="icon icon-rss"></i>
+            </a>
         </div>
-    </div>
-        <div class="contentBox">
-    	<div class="innerBox">
+    </section>
+</div>
 
 
-       	<div class="contentTitle">Home</div>
-	<br/>
-          <div class="contentText"><p>
-<img src="leah.jpg" width=150 border="0" align="right" style="padding:7px;"><span style="line-height:16px">
-I am a Hintze Fellow and the Millard and Lee Alexander Postdoctoral Fellow at <a href="http://www.chch.ox.ac.uk/" onclick="return ! window.open(this.href);">Christ Church</a> for the 2017/2018 academic year. My main research goal is to answer fundamental questions on how super-massive black holes co-evolve with the galaxies in which they reside. I do this by using low frequency radio observations coupled with multi-wavelength data. I aim to provide new insight using high-resolution radio imaging to clearly distinguish two main components in galaxy evolution: star formation, and high-energy processes associated with super-massive black holes that are actively accumulating material. I am part of Prof Matt Jarvis' research group, which focuses on galaxy evolution and cosmology.
-<br/>
-<br/>
-Previously, I completed my Ph.D. at the University of Leiden (2012-2016) under the supervsion of Prof. Huub R&ouml;ttgering. My thesis work focused on studying radio galaxies at low frequencies using the Low Frequency Array (LOFAR), using both spectroscopy and high resolution imaging. 
-<br/>
-<br/>
-I earned my M.Sc. in Physics at the University of Oklahoma (2009-2012) under the supervision of Prof. Xinyu Dai. My thesis focused on the link between super-massive black holes and their host galaxies, using X-ray observations and simulations. 
-<br/>
-<br/>
-I did my undergraduate studies at the University of Michigan, earning a double major in Physics and Astronomy. I had a full scholarship from the US Air Force for my studies, and upon graduation in 2005, I served a six year committment as an officer, in the career field of Air Battle Management (2005-2011). 
-<br/>
-<br/>
-Originally from Michigan, I lived in six different regions of the USA before moving to the Netherlands and then to Oxford. I enjoy reading, cooking, sewing, running, and outdoor activities. I joined the Christ Church Boat Club in Fall 2017 and row in collegiate competitions.
-<br/>
-<br/>
-</span></p></div>
-    </div>
-    </div>
-
-<p>
-<p>
-<p>
-<br/>
-<br/>
-<p style="text-align: center;">
-<b><i>Image credits: Leah Morabito</b></i>
-</p>
-<!--<p>Exact Gaunt Factors for quantum levels up to n=2000 can be downloaded <a href="exact_gaunt_factors.fits">here</a>.</p> -->
-<br/>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-74160336-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-</body>
-</html>
+<article class="container">
+{% for post in paginator.posts %}
+  {% unless post.draft %}
+    <section class="index">
+        <!-- {% if post.author.image %}<img src="/images/{{ post.author.image }}" class="avatar">{% endif %}-->
+        <div>
+            <h2 class="title"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h2>
+            <p>{{ post.excerpt }}</p>
+            <div class="meta">
+                Written By <address>{{ post.author.name }}</address> &mdash;
+                <time pubdate datetime="{{ post.date | date: "%Y-%d-%B" }}" title="{{ post.date | date: "%B %d, %Y" }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            </div>
+        </div>
+        <hr>
+    </section>
+    {% endunless %}
+    {% endfor %}
+    <section class="pagination" style="text-align:center">
+      {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+        <a href="/" class="btn btn-outline">‹ Newer</a>
+        {% else %}
+        <a href="/page{{ paginator.previous_page }}" class="btn btn-outline">‹ Newer</a>
+        {% endif %}
+      {% endif %}
+      {% if paginator.next_page %}
+        <a href="/page{{ paginator.next_page }}" class="btn btn-outline">Older ›</a>
+      {% endif %}
+    </section>
+</article>
