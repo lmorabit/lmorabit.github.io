@@ -31,7 +31,7 @@ a {
 }
 
 a:hover {
-  color: #043b7b;
+  color: #67246d;
 }
 
 h1,
@@ -44,7 +44,7 @@ h6 {
 }
 
 .bg-primary {
-  background-color: #043b7b !important;
+  background-color: #67246d !important;
 }
 
 .bg-dark {
